@@ -183,6 +183,7 @@ class Report(object):
         model |= {'dqztm': '01'}  # 当前状态
         report_info = {'info': json.dumps({'model': model})}
         logging.info(f"生成上报信息成功。今日体温：{temperature}℃")
+        logging.info(f"地址：哈工深")
 
         url_loc = self.urls['loc_update']
         loc_info = {'id': module, 'gpswzxx': "广东省", 'gpswzjd': 113.96778,'gpswzwd': 22.58678}
