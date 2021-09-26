@@ -178,14 +178,14 @@ class Report(object):
         temperature = format(random.uniform(361, 368) / 10, '.1f')
         model = {key: data_orig[key] for key in self.keys}
         model |= {'id': module, 'brzgtw': temperature, 'sffwwhhb': self.graduating}
-        model |= {'gpswzxx': "广东省深圳市南山区桃源街道平山二路大园工业区北区"}
+        model |= {'gpswzxx': "广东省深圳市南山区桃源街道丽山路96号哈尔滨工业大学(深圳)"}
         model |= {'stzkm': '01'}  # 其他需要报告的事项
         model |= {'dqztm': '01'}  # 当前状态
         report_info = {'info': json.dumps({'model': model})}
         logging.info(f"生成上报信息成功。今日体温：{temperature}℃")
 
         url_loc = self.urls['loc_update']
-        loc_info = {'id': module, 'gpswzxx': "广东省", 'gpswzjd': 113.97132, 'gpswzwd': 22.58469}
+        loc_info = {'id': module, 'gpswzxx': "广东省", 'gpswzjd': 113.96778,'gpswzwd': 22.58678}
         response = self.session.post(url_loc, params={'info': json.dumps(loc_info)}, proxies=self.proxies)
         logging.debug(f'POST {url_loc} {response.status_code}')
 
